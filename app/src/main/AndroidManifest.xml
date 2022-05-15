@@ -3,10 +3,6 @@
 		xmlns:tools = "http://schemas.android.com/tools"
 		package = "com.bqt.test.x">
 	
-	<uses-permission
-			android:name = "android.permission.PACKAGE_USAGE_STATS"
-			tools:ignore = "ProtectedPermissions"/>
-	
 	<application
 			android:name = ".MyApplication"
 			android:icon = "@mipmap/ic_launcher"
@@ -24,14 +20,14 @@
 				<category android:name = "android.intent.category.LAUNCHER"/>
 			</intent-filter>
 		</activity>
-		<activity android:name = ".SecondActivity"/>
+		<activity
+				android:name = ".FlutterFragmentActivity"
+				android:theme = "@style/MyTheme"/>
 		<activity
 				android:name = "io.flutter.embedding.android.FlutterActivity"
 				android:configChanges = "orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
 				android:hardwareAccelerated = "true"
 				android:theme = "@style/MyTheme"
 				android:windowSoftInputMode = "adjustResize"/>
-	
 	</application>
-
 </manifest>

@@ -13,6 +13,8 @@ class QtFlutterEngine private constructor() {
         private var INSTANCE: FlutterEngine? = null
         private const val ENGINE_ID: String = "my_engine_id"
 
+        fun getEngineId(context: Context, initialRoute: String? = null) = ENGINE_ID.also { init(context, initialRoute) }
+
         fun init(context: Context, initialRoute: String? = null): FlutterEngine {
             val isInvalid: Boolean = File(".soFileDir", ".soFileName").exists()
             if (isInvalid) {
@@ -25,8 +27,6 @@ class QtFlutterEngine private constructor() {
                 INSTANCE ?: FlutterEngine(context).also { initFlutterEngine(it, initialRoute) }
             }
         }
-
-        fun getEngineId(context: Context): String = ENGINE_ID.also { init(context) }
 
         private fun initFlutterEngine(flutterEngine: FlutterEngine, initialRoute: String? = null) {
             INSTANCE = flutterEngine

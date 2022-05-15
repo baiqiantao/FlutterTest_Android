@@ -17,7 +17,9 @@ class MainActivity : ListActivity() {
             "自定义初始路由",
             "缓存的 FlutterEngine",
             "透明的 FlutterActivity",
-            ""
+            "FlutterFragmentActivity",
+            "FlutterFragmentActivity 基础功能",
+            "FlutterFragmentActivity + 缓存的 FlutterEngine",
         )
         listAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, array)
     }
@@ -26,6 +28,7 @@ class MainActivity : ListActivity() {
     override fun onListItemClick(l: ListView, v: View, position: Int, id: Long) {
         val intent1: Intent = FlutterActivity
             .withNewEngine() // 在内部创建一个属于自己的 FlutterEngine 实例，这会有一个明显的初始化时间
+            .dartEntrypointArgs(null) // Pass arguments to Dart's entrypoint function
             .initialRoute("/my_route")  // 自定义初始路由
             .build(this)
 
@@ -42,6 +45,9 @@ class MainActivity : ListActivity() {
             1 -> startActivity(intent1)
             2 -> startActivity(intent2)
             3 -> startActivity(intent3)
+            4 -> FlutterFragmentActivity.launche(this)
+            5 -> FlutterFragmentActivity.launche(this, 1)
+            6 -> FlutterFragmentActivity.launche(this, 2)
         }
     }
 }
