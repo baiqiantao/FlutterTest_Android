@@ -13,7 +13,7 @@ class MainActivity : ListActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val array = arrayOf(
-            "默认的 FlutterActivity",
+            "跳转 FlutterActivity",
             "自定义初始路由",
             "缓存的 FlutterEngine",
             "透明的 FlutterActivity",
