@@ -1,4 +1,4 @@
-package com.bqt.test.x
+package com.bqt.test.flutter.basic
 
 import android.app.ListActivity
 import android.content.Intent
@@ -9,14 +9,12 @@ import android.widget.ListView
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.android.FlutterActivityLaunchConfigs
 
-class MainActivity : ListActivity() {
+class BasicTestActivity : ListActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val array = arrayOf(
-            "跳转 FlutterActivity",
-            "自定义初始路由",
-            "缓存的 FlutterEngine",
-            "透明的 FlutterActivity",
+            "withNewEngine",
+            "withCachedEngine",
             "FlutterFragmentActivity",
             "FlutterFragmentActivity 基础功能",
             "FlutterFragmentActivity + 缓存的 FlutterEngine",
@@ -32,22 +30,16 @@ class MainActivity : ListActivity() {
             .initialRoute("/my_route")  // 自定义初始路由
             .build(this)
 
-        val intent2 = FlutterActivity
-            .withCachedEngine(QtFlutterEngine.getEngineId(this))
-            .build(this)
-
-        val intent3: Intent = FlutterActivity
+        val intent2: Intent = FlutterActivity
             .withCachedEngine(QtFlutterEngine.getEngineId(this))
             .backgroundMode(FlutterActivityLaunchConfigs.BackgroundMode.transparent)
             .build(this)
         when (position) {
-            0 -> startActivity(FlutterActivity.createDefaultIntent(this))
-            1 -> startActivity(intent1)
-            2 -> startActivity(intent2)
-            3 -> startActivity(intent3)
-            4 -> FlutterFragmentActivity.launche(this)
-            5 -> FlutterFragmentActivity.launche(this, 1)
-            6 -> FlutterFragmentActivity.launche(this, 2)
+            0 -> startActivity(intent1)
+            1 -> startActivity(intent2)
+            2 -> FlutterFragmentActivity.launche(this)
+            3 -> FlutterFragmentActivity.launche(this, 1)
+            4 -> FlutterFragmentActivity.launche(this, 2)
         }
     }
 }

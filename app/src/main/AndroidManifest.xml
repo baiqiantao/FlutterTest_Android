@@ -13,7 +13,7 @@
 			tools:ignore = "AllowBackup,GoogleAppIndexingWarning">
 		
 		<activity
-				android:name = ".MainActivity"
+				android:name = "com.bqt.test.flutter.FlutterTestActivity"
 				android:exported = "true">
 			<intent-filter>
 				<action android:name = "android.intent.action.MAIN"/>
@@ -21,13 +21,19 @@
 			</intent-filter>
 		</activity>
 		<activity
-				android:name = ".FlutterFragmentActivity"
-				android:theme = "@style/MyTheme"/>
-		<activity
 				android:name = "io.flutter.embedding.android.FlutterActivity"
 				android:configChanges = "orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
 				android:hardwareAccelerated = "true"
 				android:theme = "@style/MyTheme"
 				android:windowSoftInputMode = "adjustResize"/>
+		<activity android:name = "com.bqt.test.flutter.basic.FlutterFragmentActivity"/>
+		<activity android:name = "com.bqt.test.flutter.channel.FlutterChannelActivity"/>
+		<activity android:name = "com.bqt.test.flutter.channel.FlutterBasicMessageChannelActivity"/>
+		<activity android:name = "com.bqt.test.flutter.channel.FlutterPigeonActivity"/>
+		<activity android:name = "com.bqt.test.flutter.multiple.DoubleFlutterActivity"/>
+		<activity android:name = "com.bqt.test.flutter.multiple.SingleFlutterActivity"/>
+		<activity android:name = "com.bqt.test.flutter.multiple.MultFlutterTestActivity"/>
+		<activity android:name = "com.bqt.test.flutter.channel.ChannelTestActivity"/>
+		<activity android:name = "com.bqt.test.flutter.basic.BasicTestActivity"/>
 	</application>
 </manifest>

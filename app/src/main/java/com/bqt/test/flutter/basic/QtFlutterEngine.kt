@@ -1,4 +1,4 @@
-package com.bqt.test.x
+package com.bqt.test.flutter.basic
 
 import android.content.Context
 import android.util.Log
