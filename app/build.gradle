@@ -5,6 +5,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        bqt {
+            storeFile file('C:\\_dev\\flutter\\签名\\android签名\\bqt.jks')
+            storePassword '123456'
+            keyPassword '123456'
+            keyAlias 'bqt'
+        }
+    }
     compileSdkVersion 31
     buildToolsVersion "30.0.2"
 
@@ -19,9 +27,13 @@ android {
     }
 
     buildTypes {
+        debug {
+            signingConfig signingConfigs.bqt
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.bqt
         }
     }
     compileOptions {
