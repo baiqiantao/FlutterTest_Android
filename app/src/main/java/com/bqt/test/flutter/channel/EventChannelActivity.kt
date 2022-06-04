@@ -1,14 +1,13 @@
 package com.bqt.test.flutter.channel
 
 import android.os.CountDownTimer
-import androidx.annotation.NonNull
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.BinaryMessenger
 import io.flutter.plugin.common.EventChannel
 import io.flutter.plugin.common.MethodChannel
 
-class FlutterChannelActivity : FlutterActivity() {
+class EventChannelActivity : FlutterActivity() {
 
     companion object {
         const val METHOD_CHANNEL_PATH = "com.bqt.test/method_channel"
@@ -31,7 +30,7 @@ class FlutterChannelActivity : FlutterActivity() {
         }
     }
 
-    override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
+    override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
         val binaryMessenger: BinaryMessenger = flutterEngine.dartExecutor.binaryMessenger
         val mMethodChannel = MethodChannel(binaryMessenger, METHOD_CHANNEL_PATH)

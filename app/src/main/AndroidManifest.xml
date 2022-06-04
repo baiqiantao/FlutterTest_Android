@@ -27,13 +27,15 @@
 				android:theme = "@style/MyTheme"
 				android:windowSoftInputMode = "adjustResize"/>
 		<activity android:name = "com.bqt.test.flutter.basic.FlutterFragmentActivity"/>
-		<activity android:name = "com.bqt.test.flutter.channel.FlutterChannelActivity"/>
-		<activity android:name = "com.bqt.test.flutter.channel.FlutterBasicMessageChannelActivity"/>
-		<activity android:name = "com.bqt.test.flutter.channel.FlutterPigeonActivity"/>
+		<activity android:name = "com.bqt.test.flutter.channel.EventChannelActivity"/>
+		<activity android:name = "com.bqt.test.flutter.channel.BasicMessageChannelActivity"/>
+		<activity android:name = "com.bqt.test.flutter.channel.PigeonActivity"/>
 		<activity android:name = "com.bqt.test.flutter.multiple.DoubleFlutterActivity"/>
 		<activity android:name = "com.bqt.test.flutter.multiple.SingleFlutterActivity"/>
 		<activity android:name = "com.bqt.test.flutter.multiple.MultFlutterTestActivity"/>
 		<activity android:name = "com.bqt.test.flutter.channel.ChannelTestActivity"/>
 		<activity android:name = "com.bqt.test.flutter.basic.BasicTestActivity"/>
+		<activity android:name = "com.bqt.test.flutter.channel.MethodChannelActivity"/>
+		<activity android:name = "com.bqt.test.flutter.channel.TaskQueueActivity"/>
 	</application>
 </manifest>

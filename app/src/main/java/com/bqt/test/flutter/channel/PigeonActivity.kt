@@ -2,7 +2,6 @@ package com.bqt.test.flutter.channel
 
 import android.os.Handler
 import android.os.Looper
-import androidx.annotation.NonNull
 import com.bqt.test.flutter.channel.pigeon.Pigeon
 import com.bqt.test.flutter.channel.pigeon.TestAsyApiImpl
 import com.bqt.test.flutter.channel.pigeon.TestBookApiImpl
@@ -11,10 +10,10 @@ import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.BinaryMessenger
 
-class FlutterPigeonActivity : FlutterActivity() {
+class PigeonActivity : FlutterActivity() {
     var mFlutterApi: Pigeon.TestFlutterApi? = null
 
-    override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
+    override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
         val binaryMessenger: BinaryMessenger = flutterEngine.dartExecutor.binaryMessenger
 
@@ -39,6 +38,3 @@ class FlutterPigeonActivity : FlutterActivity() {
             }
     }
 }
-
-fun Handler.postDelayed(delay: Long, runnable: Runnable) = postDelayed(runnable, delay)
-fun isMainThread() = Looper.getMainLooper().thread == Thread.currentThread()

@@ -1,16 +1,18 @@
 package com.bqt.test.flutter.channel
 
 import android.os.Handler
-import androidx.annotation.NonNull
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
-import io.flutter.plugin.common.*
+import io.flutter.plugin.common.BasicMessageChannel
+import io.flutter.plugin.common.BinaryMessenger
+import io.flutter.plugin.common.MessageCodec
+import io.flutter.plugin.common.StringCodec
 
-class FlutterBasicMessageChannelActivity : FlutterActivity() {
+class BasicMessageChannelActivity : FlutterActivity() {
 
     private var mBasicMessageChannel: BasicMessageChannel<String>? = null
 
-    override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
+    override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
         val binaryMessenger: BinaryMessenger = flutterEngine.dartExecutor.binaryMessenger
         val messageCodec: MessageCodec<String> = StringCodec.INSTANCE // 指定编解码器
