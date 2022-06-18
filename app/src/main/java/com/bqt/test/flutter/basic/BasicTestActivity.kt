@@ -18,6 +18,10 @@ class BasicTestActivity : ListActivity() {
             "FlutterFragmentActivity",
             "FlutterFragmentActivity 基础功能",
             "FlutterFragmentActivity + 缓存的 FlutterEngine",
+            "main",
+            "greenMain",
+            "blueMain",
+            "查看文件",
         )
         listAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, array)
     }
@@ -40,6 +44,14 @@ class BasicTestActivity : ListActivity() {
             2 -> FlutterFragmentActivity.launche(this)
             3 -> FlutterFragmentActivity.launche(this, 1)
             4 -> FlutterFragmentActivity.launche(this, 2)
+            5 -> testEntrypoint("main")
+            6 -> testEntrypoint("greenMain")
+            7 -> testEntrypoint("blueMain")
+            8 -> println(externalCacheDir?.list()?.toSet())
         }
+    }
+
+    private fun testEntrypoint(entrypoint: String) {
+        startActivity(Intent(this, TestFlutterActivity::class.java).putExtra("entrypoint", entrypoint))
     }
 }

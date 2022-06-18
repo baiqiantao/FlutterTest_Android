@@ -3,6 +3,9 @@
 		xmlns:tools = "http://schemas.android.com/tools"
 		package = "com.bqt.test.x">
 	
+	<uses-permission android:name = "android.permission.INTERNET"/>
+	<uses-permission android:name = "android.permission.READ_EXTERNAL_STORAGE"/>
+	
 	<application
 			android:name = ".MyApplication"
 			android:icon = "@mipmap/ic_launcher"
@@ -37,5 +40,6 @@
 		<activity android:name = "com.bqt.test.flutter.basic.BasicTestActivity"/>
 		<activity android:name = "com.bqt.test.flutter.channel.MethodChannelActivity"/>
 		<activity android:name = "com.bqt.test.flutter.channel.TaskQueueActivity"/>
+		<activity android:name = "com.bqt.test.flutter.basic.TestFlutterActivity"/>
 	</application>
 </manifest>
